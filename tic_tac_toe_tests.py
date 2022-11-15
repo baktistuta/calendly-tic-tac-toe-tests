@@ -50,14 +50,14 @@ class TicTacToeTestClass(BaseCase):
             winner_msg.format("X") or winner_msg.format("O")
         )
     
-    """
-    Helper method to generate an empty board to play.
-
-    {board_size} should be a positive integer or float.
-                 If the input type is 'float', it will be rounded up to the nearest integer.
-                 If the input type is 'None', it will click the start button without any input.
-    """
     def setup_empty_board(self, board_size):
+        """
+        Helper method to generate an empty board to play.
+
+        {board_size} should be a positive integer or float.
+                     If the input type is 'float', it will be rounded up to the nearest integer.
+                     If the input type is 'None', it will click the start button without any input.
+        """
         self.open(test_url)
         if type(board_size) in [int, float] and board_size > 0:
             if type(board_size) == float:
@@ -70,12 +70,12 @@ class TicTacToeTestClass(BaseCase):
         else:
             print("{} {}is an invalid board size.".format(board_size, type(board_size)))
 
-    """
-    Helper method to simulate a player winning a game.
-
-    String {player} should be either string "X" or "O".
-    """
     def let_winner_be(self, player):
+        """
+        Helper method to simulate a player winning a game.
+
+        String {player} should be either string "X" or "O".
+        """
         plays_for_X_to_win = [0, 3, 1, 4, 2]    # Player X completes a row at the top
         plays_for_O_to_win = [5, 2, 8, 4, 7, 6] # Player O completes a diagonal from top right to bottom left
 
@@ -99,18 +99,18 @@ class TicTacToeTestClass(BaseCase):
         winner_msg = endgame_message
         winner_msg = winner_msg.format(player)
 
-    """
-    Helper method to simulate a draw.
-    """
     def end_game_in_a_draw(self):
+        """
+        Helper method to simulate a draw.
+        """
         cells_by_id_to_fill_in_order = [0, 1, 3, 4, 7, 6, 2, 5, 8]
         for id in cells_by_id_to_fill_in_order:
             self.click(cell_element_by_xpath.format(id))
 
-    """
-    Assertion to check that the number of rows and columns match the expected size.
-    """
     def assert_correct_board_size(self, expected_size):
+        """
+        Assertion to check that the number of rows and columns match the expected size.
+        """
         num_rows = len (self.driver.find_elements("xpath", "//*[@id='table']/tr"))
         num_columns = len (self.driver.find_elements("xpath", "//*[@id='table']/tr[1]/td"))
         if type(expected_size) == float:
@@ -119,10 +119,10 @@ class TicTacToeTestClass(BaseCase):
         print("Expected board size: ", expected_size)
         self.assert_true(num_rows == num_columns == expected_size)
     
-    """
-    Assertion to check that the web page is clean and no Tic Tac Toe board is visible.
-
-    Checks for cell with id 0, which is the top left cell of a visible board.
-    """
     def assert_no_board_on_page(self):
-        self.assert_element_not_visible(cell_element_by_xpath, "0")
+        """
+        Assertion to check that the web page is clean and no Tic Tac Toe board is visible.
+
+        Checks for cell with id 0, which is the top left cell of a visible board.
+        """
+        self.assert_element_not_visible(cell_element_by_xpath.format("0"))
