@@ -24,6 +24,8 @@ class TicTacToeTestClass(BaseCase):
         self.assert_no_board_on_page()
         self.setup_empty_board(0)       # Testing 0
         self.assert_no_board_on_page()
+        self.setup_empty_board("three") # Testing string
+        self.assert_no_board_on_page()
         self.setup_empty_board(None)    # Testing null input
         self.assert_no_board_on_page()
     
