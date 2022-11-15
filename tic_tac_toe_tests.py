@@ -62,8 +62,6 @@ class TicTacToeTestClass(BaseCase):
         """
         self.open(test_url)
         if type(board_size) in [int, float] and board_size > 0:
-            if type(board_size) == float:
-                board_size = math.ceil(board_size)  # Float input is rounded up
             self.type("#number", board_size)
             self.click("#start")
             self.assert_element("#table")
