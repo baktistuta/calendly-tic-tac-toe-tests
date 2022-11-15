@@ -57,7 +57,6 @@ class TicTacToeTestClass(BaseCase):
         Helper method to generate an empty board to play.
 
         {board_size} should be a positive integer or float.
-                     If the input type is 'float', it will be rounded up to the nearest integer.
                      If the input type is 'None', it will click the start button without any input.
         """
         self.open(test_url)
@@ -110,7 +109,7 @@ class TicTacToeTestClass(BaseCase):
         num_rows = len (self.driver.find_elements("xpath", "//*[@id='table']/tr"))
         num_columns = len (self.driver.find_elements("xpath", "//*[@id='table']/tr[1]/td"))
         if type(expected_size) == float:
-            expected_size = math.ceil(expected_size)
+            expected_size = math.ceil(expected_size)  # Rounding up the decimal input to match current behavior
         print("Generated board size: {} x {}".format(num_rows, num_columns))
         print("Expected board size: ", expected_size)
         self.assert_true(num_rows == num_columns == expected_size)
