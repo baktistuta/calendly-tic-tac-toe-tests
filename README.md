@@ -2,6 +2,11 @@
 
 Author: Michael Park
 
+Manual testing bug report: [Google Doc Link](https://docs.google.com/document/d/14CGy4aXAYT-uwz7AEaqpINDepQNMPPVkgXA9u_Imyjc/edit?usp=sharing)
+
+Walkthrough of test automation: [Screen recording]()
+
+
 ## About
 
 Wrote 5 automated tests for a [Tic Tac Toe game web application](https://roomy-fire-houseboat.glitch.me/).
