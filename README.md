@@ -9,7 +9,7 @@ Walkthrough of test automation: [Screen recording]()
 
 ## About
 
-Wrote 5 automated tests for a [Tic Tac Toe game web application](https://roomy-fire-houseboat.glitch.me/).
+Wrote 5 automated tests for a [Tic Tac Toe game web application](https://roomy-fire-houseboat.glitch.me/). Check out the tests in [tic_tac_toe_test.py](https://github.com/baktistuta/calendly-tic-tac-toe-tests/blob/main/tic_tac_toe_tests.py)
 
 Tests are written in Python with [Seleniumbase](https://pypi.org/project/seleniumbase/).
 
