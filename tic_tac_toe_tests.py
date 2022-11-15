@@ -80,18 +80,14 @@ class TicTacToeTestClass(BaseCase):
         plays_for_O_to_win = [5, 2, 8, 4, 7, 6] # Player O completes a diagonal from top right to bottom left
 
         if player == "X":
-            cells_by_id_to_fill_in_order = plays_for_X_to_win
-            for id in cells_by_id_to_fill_in_order:
+            for id in plays_for_X_to_win:
                 self.click(cell_element_by_xpath.format(id))
                 self.assert_text(next(char_to_use), cell_element_by_xpath.format(id))
             next(char_to_use)  # Call this one more time to reset iterator
-            # self.format_msg_for_winner(player)
         elif player == "O":
-            cells_by_id_to_fill_in_order = plays_for_O_to_win
-            for id in cells_by_id_to_fill_in_order:
+            for id in plays_for_O_to_win:
                 self.click(cell_element_by_xpath.format(id))
                 self.assert_text(next(char_to_use), cell_element_by_xpath.format(id))
-            # self.format_msg_for_winner(player)
         else:
             print("{} is an invalid player".format(player))
     
