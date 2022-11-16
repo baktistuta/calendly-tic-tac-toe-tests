@@ -49,7 +49,8 @@ class TicTacToeTestClass(BaseCase):
         self.setup_empty_board(default_board_size)
         self.end_game_in_a_draw()
         self.assert_text_not_visible(
-            winner_msg.format("X") or winner_msg.format("O")
+            endgame_message.format("X") or
+            endgame_message.format("O")
         )
     
     def setup_empty_board(self, board_size):
